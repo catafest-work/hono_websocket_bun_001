@@ -1,0 +1,13 @@
+{
+  "name": "hono_websocket_bun_001",
+  "scripts": {
+    "dev-ts": "bun run --hot src/index.ts",
+    "dev-tsx": "bun run --hot src/index.tsx"
+  },
+  "dependencies": {
+    "hono": "^4.6.13"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
