@@ -64,3 +64,36 @@ Sending order update
 Sending order update
 ...
 ```
+Using bunx to run the project:
+```aiignore
+hono_websocket_bun_001>bun add -d tsx
+bun add v1.1.33 (247456b6)
+
+installed tsx@4.19.2 with binaries:
+ - tsx
+
+17 packages installed [2.05s]
+hono_websocket_bun_001>bun run --hot src/index.tsx
+Started server http://localhost:3000
+Sending order update
+Sending order update
+Sending order update
+Sending order update
+```
+
+Using cypress with this project :
+```aiignore
+hono_websocket_bun_001>npm install cypress --save-dev       
+hono_websocket_bun_001>npm install cypress --save-dev --foreground-scripts 
+hono_websocket_bun_001>npx cypress open                                    
+```
+You can add the default spec files and run the cypress tests with https://example.cypress.io.
+For this project create a folder into cypress/e2e named hono_websocket_bun_001_cypress and add cypress tests.
+```aiignore
+\hono_websocket_bun_001>cd cypress\e2e
+
+\hono_websocket_bun_001\cypress\e2e>mkdir hono_websocket_bun_001_cypress
+
+\hono_websocket_bun_001\cypress\e2e>cd hono_websocket_bun_001_cypress
+
+```
