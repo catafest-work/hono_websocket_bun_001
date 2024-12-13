@@ -1,5 +1,5 @@
 These commands will create the hono with bun :
-```
+```aiignore
 npm create hono@latest
 
 > npx
@@ -32,12 +32,12 @@ Started server http://localhost:3000
 ```
 
 open http://localhost:3000 and you will see this:
-```
+```aiignore
 Hello Hono!
 ```
 I used source code tsx on index.tsx and I keep the old source code index.ts created for hono and bun.
 I add the index.tsx on package.json file:
-```
+```aiignore
 {
   "name": "hono_websocket_bun_001",
   "scripts": {
@@ -53,7 +53,7 @@ I add the index.tsx on package.json file:
 }
 ```
 Run with:
-```
+```aiignore
 hono_websocket_bun_001>npm run dev-tsx   
 
 > dev-tsx
