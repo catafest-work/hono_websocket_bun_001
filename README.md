@@ -171,10 +171,10 @@ add this source code :
    [] @babel/preset-env
    [] babel-loader
    [x] webpack
--@cypress/webpack-batteries-included-preprocessor
-   [] Various proposal-stage ES features
-   [] TypeScript
-   [] CoffeeScript
+- [x] @cypress/webpack-batteries-included-preprocessor
+   [x] Various proposal-stage ES features
+   [x] TypeScript
+   [x] CoffeeScript
 
 ## Solved Issues:
 - Enhanced Development Setup:
