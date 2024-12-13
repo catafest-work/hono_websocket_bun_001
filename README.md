@@ -147,42 +147,59 @@ hono_websocket_bun_001/
 
 ```
 ### create a plugin for cypress 
+
 first create a folder cypress/plugins/
+
 then create a file cypress/plugins/index.js
+
 add this source code :
-```aiignore
 
 ### All changes and my steps on project hono_websocket_bun_001
+
 ## The project now has a robust foundation for WebSocket testing with modern JavaScript features and proper type checking. Ready for implementing more advanced test scenarios!
 
 ## Solved by nodejs packages :
+
 - [x] hono
-- [] @bun 
+- [ ] @bun 
 - [x] @types/bun
 - [x] hono/bun
 - [x] tsx
 - [x] typescript
 - [x] @cypress
 - [x] @cypress-websocket-plugin
-- [] @cypress-plugin-snapshots
-- [] @cypress-plugin-retries
+- [ ] @cypress-plugin-snapshots
+- [ ] @cypress-plugin-retries
 - [x] @cypress/webpack-preprocessor
-   [] @babel/core
-   [] @babel/preset-env
-   [] babel-loader
-   [x] webpack
+
+  + [ ] @babel/core
+
+  + [ ] @babel/preset-env
+
+  + [ ] babel-loader
+
+  + [x] webpack
+
 - [x] @cypress/webpack-batteries-included-preprocessor
-   [x] Various proposal-stage ES features
-   [x] TypeScript
-   [x] CoffeeScript
+
+  + [x] Various proposal-stage ES features
+
+  + [x] TypeScript
+
+  + [x] CoffeeScript
 
 ## Solved Issues:
+
 - Enhanced Development Setup:
 - Added Webpack preprocessor
 - Configured TypeScript support
+
 with : 
-Created plugins structure in _cypress/plugins/index.js_
-Improved Test Structure on the _cypress\e2e\hono_websocket_bun_001_cypress\test_001.cy.js_
+
+- created plugins structure in _cypress/plugins/index.js_
+
+- improved Test Structure on the _cypress\e2e\hono_websocket_bun_001_cypress\test_001.cy.js_
+
 ```aiignore
 let OrderUpdate = {
     status: String,
