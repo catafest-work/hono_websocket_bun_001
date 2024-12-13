@@ -97,3 +97,52 @@ For this project create a folder into cypress/e2e named hono_websocket_bun_001_c
 \hono_websocket_bun_001\cypress\e2e>cd hono_websocket_bun_001_cypress
 
 ```
+New features for cypress and webpack ... :
+```aiignore
+hono_websocket_bun_001>npm install -D @cypress/webpack-preprocessor --legacy-peer-deps
+
+removed 214 packages, and audited 182 packages in 2s
+
+40 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+hono_websocket_bun_001>npm install --save-dev @cypress/webpack-batteries-included-preprocessor --legacy-peer-deps 
+
+added 325 packages, and audited 507 packages in 10s
+
+78 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+```
+Create a new config file named cypress.config.ts:
+```aiignore
+C:\hono_websocket_bun_001>cd cypress
+
+C:\hono_websocket_bun_001\cypress>touch cypress/webpack.config.js
+
+C:\hono_websocket_bun_001\cypress>cd support
+
+C:\hono_websocket_bun_001\cypress>touch cypress/support/websocket-helper.js
+
+```
+### I created and I tested :
+- Added Webpack preprocessor support
+- Implemented WebSocket helper utilities
+- Created custom Cypress commands for WebSocket operations
+
+### Changes on source code project :
+```aiignore
+hono_websocket_bun_001/
+├── cypress/
+│   ├── webpack.config.js         (Modern JS/TS support)
+│   ├── support/
+│   │   ├── websocket-helper.js   (Reusable WebSocket logic)
+│   │   └── commands.js           (Custom commands)
+│   └── e2e/
+       └── test_001.cy.js        (Enhanced test structure)
+
+```

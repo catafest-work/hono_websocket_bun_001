@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
 
+//TODO: new webpack import features with WebSocketHelper
+import { WebSocketHelper } from '../../support/websocket-helper'
+//
 describe('Hono WebSocket Bun Dev Server Tests', () => {
     beforeEach(() => {
         cy.visit('http://localhost:3000')
@@ -137,5 +140,24 @@ describe('Order Status Update Timing Tests', () => {
                     }
                 })
         }
+    })
+})
+//TODO: new webpack test features with WebSocketHelper
+describe('Hono WebSocket Tests', () => {
+    const wsHelper = new WebSocketHelper('ws://localhost:3000/ws')
+
+    beforeEach(() => {
+        cy.visit('http://localhost:3000')
+        wsHelper.connect()
+    })
+
+    afterEach(() => {
+        wsHelper.disconnect()
+    })
+
+    // Your existing tests with enhanced structure
+    it('should load the application successfully', () => {
+        cy.get('h1').should('exist')
+        cy.url().should('include', 'localhost:3000')
     })
 })

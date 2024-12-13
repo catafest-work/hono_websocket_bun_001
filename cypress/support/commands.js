@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// command to establish WebSocket connection
+Cypress.Commands.add('wsConnect', (url) => {
+    return new Promise((resolve) => {
+        const ws = new WebSocket(url)
+        ws.onopen = () => resolve(ws)
+    })
+})

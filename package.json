@@ -10,6 +10,8 @@
     "hono": "^4.6.13"
   },
   "devDependencies": {
+    "@cypress/webpack-batteries-included-preprocessor": "^3.0.5",
+    "@cypress/webpack-preprocessor": "^6.0.2",
     "@types/bun": "latest",
     "cypress": "^13.16.1",
     "tsx": "^4.19.2"
