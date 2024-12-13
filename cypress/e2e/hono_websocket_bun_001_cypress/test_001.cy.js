@@ -181,11 +181,9 @@ OrderUpdate = {
 describe('Hono WebSocket Bun Dev Server Tests', () => {
     // not working , uses standard JavaScript syntax
     //let wsConnection: WebSocket;
-
     beforeEach(() => {
         cy.visit('http://localhost:3000')
     })
-
 
     it('validates message format and timing', () => {
         let messageCount = 0
@@ -196,13 +194,12 @@ describe('Hono WebSocket Bun Dev Server Tests', () => {
 
             ws.onmessage = (event) => {
                 messageCount++
-                const update = JSON.parse(event.data)
+                // Handle HTML message format
+                const message = event.data
+                expect(message).to.include('orderUpdate')
+                expect(message).to.include('Order Updated')
 
-                // Validate message structure
-                expect(update).to.have.property('status')
-                expect(update).to.have.property('timestamp')
-
-                // Check message timing (2 second intervals)
+                // Check message timing
                 if (messageCount === 3) {
                     const elapsed = Date.now() - startTime
                     expect(elapsed).to.be.closeTo(6000, 500)
@@ -210,7 +207,6 @@ describe('Hono WebSocket Bun Dev Server Tests', () => {
             }
         })
 
-        // Wait for multiple messages
         cy.wait(6500)
     })
 
