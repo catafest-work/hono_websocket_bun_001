@@ -161,3 +161,78 @@ describe('Hono WebSocket Tests', () => {
         cy.url().should('include', 'localhost:3000')
     })
 })
+// not working in strict mode
+// interface OrderUpdate {
+//     status: string;
+//     timestamp: string;
+// }
+
+// use let to :
+// Block scoping makes code safer
+// Prevents variable hoisting issues
+// Follows current JavaScript best practices
+
+let OrderUpdate;
+OrderUpdate = {
+    status: String,
+    timestamp: String
+}
+
+describe('Hono WebSocket Bun Dev Server Tests', () => {
+    // not working , uses standard JavaScript syntax
+    //let wsConnection: WebSocket;
+
+    beforeEach(() => {
+        cy.visit('http://localhost:3000')
+    })
+
+
+    it('validates message format and timing', () => {
+        let messageCount = 0
+        const startTime = Date.now()
+
+        cy.window().then((win) => {
+            const ws = new WebSocket('ws://localhost:3000/order/1/status')
+
+            ws.onmessage = (event) => {
+                messageCount++
+                const update = JSON.parse(event.data)
+
+                // Validate message structure
+                expect(update).to.have.property('status')
+                expect(update).to.have.property('timestamp')
+
+                // Check message timing (2 second intervals)
+                if (messageCount === 3) {
+                    const elapsed = Date.now() - startTime
+                    expect(elapsed).to.be.closeTo(6000, 500)
+                }
+            }
+        })
+
+        // Wait for multiple messages
+        cy.wait(6500)
+    })
+
+    it('should load the application successfully', () => {
+        cy.get('h1').should('exist')
+        cy.url().should('include', 'localhost:3000')
+    })
+    it('should display the initial page structure', () => {
+        cy.get('h1')
+            .should('exist')
+            .and('have.text', 'Order Status:')
+            .and('have.css', 'color', 'rgb(255, 255, 255)')
+    })
+    it('should have HTMX and WebSocket extensions loaded', () => {
+        cy.window().then((win) => {
+            expect(win.htmx).to.exist
+            cy.get('[hx-ext="ws"]').should('exist')
+            cy.get('[ws-connect="/order/1/status"]').should('exist')
+        })
+    })
+    it('should receive and display order updates', () => {
+        cy.get('#orderUpdate')
+            .should('exist')
+    })
+})

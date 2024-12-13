@@ -14,6 +14,7 @@
     "@cypress/webpack-preprocessor": "^6.0.2",
     "@types/bun": "latest",
     "cypress": "^13.16.1",
-    "tsx": "^4.19.2"
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   }
 }
