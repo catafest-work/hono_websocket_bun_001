@@ -154,6 +154,29 @@ add this source code :
 
 ### All changes and my steps on project hono_websocket_bun_001
 ## The project now has a robust foundation for WebSocket testing with modern JavaScript features and proper type checking. Ready for implementing more advanced test scenarios!
+
+## Solved by nodejs packages :
+- [x] hono
+- [] @bun 
+- [x] @types/bun
+- [x] hono/bun
+- [x] tsx
+- [x] typescript
+- [x] @cypress
+- [x] @cypress-websocket-plugin
+- [] @cypress-plugin-snapshots
+- [] @cypress-plugin-retries
+- [x] @cypress/webpack-preprocessor
+   [] @babel/core
+   [] @babel/preset-env
+   [] babel-loader
+   [x] webpack
+-@cypress/webpack-batteries-included-preprocessor
+   [] Various proposal-stage ES features
+   [] TypeScript
+   [] CoffeeScript
+
+## Solved Issues:
 - Enhanced Development Setup:
 - Added Webpack preprocessor
 - Configured TypeScript support
